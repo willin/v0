@@ -54,7 +54,9 @@ module.exports = (fundingConfig, pkgPath) => {
   const emptyLine = print();
 
   yellow(`Thanks for installing ${packageJson.name}`);
-  dim(`Please consider donating to help ${packageJson.author} maintain this package.`);
+  dim(
+    `Please consider donating to help ${Object.isObject(packageJson.author) ? packageJson.author.name : packageJson.author} maintain this package.`
+  );
   emptyLine();
   emptyLine();
 
