@@ -3,7 +3,10 @@
   "version": "0.1.5",
   "description": "To be Willin is to be willing.",
   "main": "src/index.js",
-  "bin": "./bin/v0.js",
+  "bin": {
+    "v0": "./bin/v0",
+    "vo": "./bin/v0"
+  },
   "directories": {
     "src": "src"
   },
