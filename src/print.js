@@ -55,7 +55,7 @@ module.exports = (fundingConfig, pkgPath) => {
 
   yellow(`Thanks for installing ${packageJson.name}`);
   dim(
-    `Please consider donating to help ${Object.isObject(packageJson.author) ? packageJson.author.name : packageJson.author} maintain this package.`
+    `Please consider donating to help ${typeof packageJson.author === 'string' ? packageJson.author : packageJson.author.name} maintain this package.`
   );
   emptyLine();
   emptyLine();
