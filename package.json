@@ -1,6 +1,6 @@
 {
   "name": "v0",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "To be Willin is to be willing.",
   "main": "src/index.js",
   "bin": "./bin/v0.js",

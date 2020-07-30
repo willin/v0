@@ -1,6 +1,6 @@
 # v0
 
-[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/h1de.svg)](https://npmjs.org/package/h1de) [![npm](https://img.shields.io/npm/dm/h1de.svg)](https://npmjs.org/package/h1de) [![npm](https://img.shields.io/npm/dt/h1de.svg)](https://npmjs.org/package/h1de)
+[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dm/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dt/v0.svg)](https://npmjs.org/package/v0)
 
 > 你的`关注`是我最大的动力。 Your `Star` is the best gift.
 
