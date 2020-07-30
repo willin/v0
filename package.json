@@ -1,0 +1,43 @@
+{
+  "name": "v0",
+  "version": "0.0.1",
+  "description": "To be Willin is to be willing.",
+  "main": "src/index.js",
+  "bin": "./bin/v0.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "postinstall": "node bin/v0.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willin/v0.git"
+  },
+  "keywords": [
+    "v0",
+    "github",
+    "sponpors",
+    "cli",
+    "willin"
+  ],
+  "author": "Willin Wang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/willin/v0/issues"
+  },
+  "homepage": "https://github.com/willin/v0#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-willin": "^1.0.3",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.2.0"
+  }
+}
