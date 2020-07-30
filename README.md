@@ -11,9 +11,9 @@
 安装 Installation:
 
 ```bash
-yarn add --global v0
+yarn add v0
 # or
-npm install -g v0
+npm install --save v0
 ```
 
 使用 Usage：
