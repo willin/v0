@@ -20,13 +20,49 @@ yarn add rxjs v0
 
 Operator List:
 
+- delayRetry
 - tapAsync
+
+### delayRetry
+
+```ts
+{
+  maxAttempts?: number;
+  duration?: number;
+}
+```
+
+Defaults:
+
+```
+{
+  maxAttempts = 3,
+  duration = 1000
+}
+```
+
+Usage:
+
+```ts
+import { delayRetry } from 'v0';
+
+source$.pipe(
+  // ...
+  // Retry all options in current pipe
+  delayRetry({
+    maxAttempts: 2,
+    duration: 200
+  }),
+  // catchError is needed
+  catchError((error) => of(error))
+);
+```
 
 ### tapAsync
 
 Just like tap, support async/await (promise) function.
 
-Demo:
+Usage:
 
 ```ts
 import { tapAsync } from 'v0';
