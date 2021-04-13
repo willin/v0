@@ -9,7 +9,7 @@ export function delayRetry<T>({
   duration?: number;
 } = {}): MonoTypeOperatorFunction<T> {
   return retryWhen<T>(
-    (attempts: Observable<any>): Observable<any> =>
+    (attempts: Observable<unknown>): Observable<unknown> =>
       attempts.pipe(
         mergeMap((error, i) => {
           const retryAttempt = i + 1;

@@ -1,4 +1,4 @@
-import { range, throwError, of, from } from 'rxjs';
+import { range, throwError, of, from, Observable } from 'rxjs';
 import { mergeMap, tap, map, catchError } from 'rxjs/operators';
 
 import { delayRetry } from '../../src';
@@ -42,17 +42,14 @@ describe('delayRetry', () => {
       }),
       mergeMap((val) =>
         from(
-          ((): any => {
+          ((): Observable<unknown> => {
             if (val > 6) {
               return throwError(val);
             }
             return of(val);
           })()
         ).pipe(
-          delayRetry({
-            maxAttempts: 2,
-            duration: 200
-          }),
+          delayRetry(),
           catchError((error) => of(error))
         )
       )
@@ -64,5 +61,5 @@ describe('delayRetry', () => {
         done();
       }
     });
-  });
+  }, 60000);
 });
