@@ -1,4 +1,4 @@
-import { OperatorFunction } from 'rxjs';
+import { OperatorFunction, throwError } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 /**
@@ -16,7 +16,11 @@ import { mergeMap } from 'rxjs/operators';
  */
 export function tapAsync<T>(fn: (x: T) => Promise<void | void | never>): OperatorFunction<T, T> {
   return mergeMap(async (x: T) => {
-    await fn(x);
-    return x;
+    try {
+      await fn(x);
+      return x;
+    } catch (err) {
+      return throwError(err);
+    }
   });
 }
