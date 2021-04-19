@@ -1,4 +1,4 @@
-export { delayRetry } from './operators/delayRetry';
-export { tapAsync } from './operators/tapAsync';
-
-export { RxPromise } from './utils/RxPromise';
+export * from './types';
+export * from './operators';
+export * from './decorators';
+export * from './utils';
