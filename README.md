@@ -6,6 +6,24 @@ Useful Rxjs Operators & Utils.
 
 > 你的`关注`是我最大的动力。 Your `Star` is the best gift.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  - [Install](#install)
+- [Usage](#usage)
+  - [Operators](#operators)
+    - [delayRetry](#delayretry)
+    - [tapAsync](#tapasync)
+  - [Decorators](#decorators)
+    - [@Cacheable(timeout = 0, mode = ReturnType.Detect)](#cacheabletimeout--0-mode--returntypedetect)
+  - [Utils](#utils)
+    - [cacheable(FN, timeout = 0, isPromise = false)](#cacheablefn-timeout--0-ispromise--false)
+    - [RxPromise](#rxpromise)
+- [Contribute](#contribute)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Install
 
 ```bash
@@ -14,18 +32,11 @@ npm i --save rxjs v0
 yarn add rxjs v0
 ```
 
-## Usage
+# Usage
 
 中文文档参考： [rx.js.cool](https://rx.js.cool/) 中的【[进阶（Advanced）](http://rx.js.cool/v0)】章节系列文章
 
-Operators:
-
-- delayRetry
-- tapAsync
-
-Utils:
-
-- RxPromise
+## Operators
 
 ### delayRetry
 
@@ -49,6 +60,7 @@ Usage:
 
 ```ts
 import { delayRetry } from 'v0';
+// import { delayRetry } from 'v0/operators';
 
 source$.pipe(
   // ...
@@ -70,6 +82,7 @@ Usage:
 
 ```ts
 import { tapAsync } from 'v0';
+// import { tapAsync } from 'v0/operators';
 
 source$.pipe(
   tapAsync(async (val) => {
@@ -78,9 +91,76 @@ source$.pipe(
 );
 ```
 
+## Decorators
+
+### @Cacheable(timeout = 0, mode = ReturnType.Detect)
+
+Return Type:
+
+```ts
+enum ResultType {
+  Promise = 'Promise',
+  Observable = 'Observable',
+  Detect = 'Detect'
+}
+```
+
+Usage:
+
+```ts
+import { interval } from 'rxjs';
+import { Cacheable, ReturnType } from 'v0';
+// import { Cacheable } from 'v0/decorators';
+
+class Demo {
+  @Cacheable(300, ReturnType.Promise)
+  async save(n: number) {
+    // await something...
+    console.log(`${n} saved`);
+    return `${n} succeed`;
+  }
+}
+
+const demo = new Demo();
+
+demo.save(1).then(console.log);
+demo.save(1).then(console.log);
+demo.save(3).then(console.log);
+
+/** logs:
+ *  1 saved         <---- save only called once, the second call resued before if last call is pending
+ *  1 succeed
+ *  1 succeed
+ *  3 saved
+ *  3 succeed
+ */
+```
+
+## Utils
+
+### cacheable(FN, timeout = 0, isPromise = false)
+
+```ts
+import { cacheable } from 'v0';
+// import { cacheable } from 'v0/utils';
+
+const get = () => {
+  return from(
+    new Promise((resolve) => {
+      setTimeout(() => resolve(new Date()), 2000);
+    })
+  );
+};
+
+const cachedGet = cacheable(get, false /*if this function returns a PromiseLike result*/);
+```
+
 ### RxPromise
 
 ```ts
+import { RxPromise } from 'v0';
+// import { RxPromise } from 'v0/utils';
+
 // RxPromise<T, R = Error> extends Observable<T>
 const mockedPromise = new RxPromise(resolver);
 ```
@@ -119,13 +199,13 @@ s$.subscribe({
 });
 ```
 
-## Contribute
+# Contribute
 
 1. Add your own operator
 2. Update Readme Doc (List / Usage)
 3. Make a PR
 
-## License
+# License
 
 Apache 2.0
 

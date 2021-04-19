@@ -1,24 +1,45 @@
 {
   "name": "v0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "To be Willin is to be willing.",
   "main": "dist/index.js",
   "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
-    "prepare": "npm run build",
+    "prepare": "npm run build && doctoc --github",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage"
   },
+  "exports": {
+    ".": {
+      "node": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./operators": {
+      "node": "./dist/operators/index.js",
+      "default": "./src/operators/index.ts"
+    },
+    "./decorators": {
+      "node": "./dist/decorators/index.js",
+      "default": "./src/decorators/index.ts"
+    },
+    "./utils": {
+      "node": "./dist/utils/index.js",
+      "default": "./src/utils/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "peerDependencies": {
-    "rxjs": "^7.0.0-beta.15"
+    "reflect-metadata": ">0.1.13",
+    "rxjs": ">6.6.6"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
     "@willin/eslint-config": "^0.0.6",
+    "doctoc": "^2.0.0",
     "eslint": "^7.5.0",
     "eslint-plugin-import": "^2.22.0",
     "jest": "^26.4.2",
