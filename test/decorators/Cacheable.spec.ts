@@ -5,7 +5,7 @@ import { Cacheable, ResultType } from '../../src';
 describe('@Cacheable', () => {
   test('@Cacheable Promise', async () => {
     class Demo {
-      @Cacheable(1000, ResultType.Promise)
+      @Cacheable()
       // eslint-disable-next-line class-methods-use-this
       async save(n: number): Promise<string> {
         const result = await Promise.resolve(`${n} succeed`);
@@ -19,7 +19,7 @@ describe('@Cacheable', () => {
 
   test('@Cacheable Observable', (complete) => {
     class Demo {
-      @Cacheable()
+      @Cacheable(1000, ResultType.Observable)
       // eslint-disable-next-line class-methods-use-this
       save(n: number): Observable<string> {
         return of(`${n} succeed`);

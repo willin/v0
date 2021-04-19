@@ -27,14 +27,7 @@ export function cacheable<T extends (...args: any[]) => Observable<any> | Promis
       );
       cache[key] = isPromise
         ? new Promise((resolve, reject) => {
-            result.subscribe(
-              (val) => {
-                resolve(val);
-              },
-              (error) => {
-                reject(error);
-              }
-            );
+            result.subscribe(resolve, reject);
           })
         : result;
     }

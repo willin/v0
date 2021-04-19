@@ -5,6 +5,7 @@ export function hash(target: any): string {
   return crypto.createHash('md5').update(JSON.stringify(target)).digest('hex');
 }
 
+/* istanbul ignore next */
 // eslint-disable-next-line
 export const AsyncFunction = async function () {}.constructor;
 
