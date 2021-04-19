@@ -2,7 +2,7 @@
 
 Useful Rxjs Operators & Utils.
 
-[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dm/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dt/v0.svg)](https://npmjs.org/package/v0) [![Maintainability](https://api.codeclimate.com/v1/badges/e7da4dfd45eeaa59402a/maintainability)](https://codeclimate.com/github/willin/v0/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/e7da4dfd45eeaa59402a/test_coverage)](https://codeclimate.com/github/willin/v0/test_coverage)
+[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dm/v0.svg)](https://npmjs.org/package/v0) [![npm](https://img.shields.io/npm/dt/v0.svg)](https://npmjs.org/package/v0) [![Maintainability](https://api.codeclimate.com/v1/badges/e7da4dfd45eeaa59402a/maintainability)](https://codeclimate.com/github/willin/v0/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/e7da4dfd45eeaa59402a/test_coverage)](https://codeclimate.com/github/willin/v0/test_coverage) [![Build Status](https://travis-ci.com/willin/v0.svg?branch=main)](https://travis-ci.com/willin/v0)
 
 > 你的`关注`是我最大的动力。 Your `Star` is the best gift.
 
