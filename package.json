@@ -1,6 +1,6 @@
 {
   "name": "v0",
-  "version": "1.1.0-beta.1",
+  "version": "1.1.1",
   "description": "To be Willin is to be willing.",
   "main": "dist/index.js",
   "module": "src/index.ts",
@@ -8,22 +8,24 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "prepare": "npm run build && doctoc --github",
+    "prepublish": "npm run prepare",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage"
   },
   "exports": {
-    ".": {
-      "node": "./dist/index.js",
-      "default": "./src/index.ts"
-    },
-    "./operators": {
+    ".": "./dist/index.js",
+    "./operators/": {
       "node": "./dist/operators/index.js",
       "default": "./src/operators/index.ts"
     },
     "./decorators": {
       "node": "./dist/decorators/index.js",
       "default": "./src/decorators/index.ts"
+    },
+    "./types": {
+      "node": "./dist/types/index.js",
+      "default": "./src/types/index.ts"
     },
     "./utils": {
       "node": "./dist/utils/index.js",
@@ -46,8 +48,22 @@
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
+  "files": [
+    "dist",
+    "decorators",
+    "operators",
+    "types",
+    "utils",
+    "src",
+    "test",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "tsconfig.json",
+    "tsconfig.build.json"
+  ],
   "jest": {
     "moduleFileExtensions": [
       "js",
