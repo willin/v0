@@ -3,3 +3,5 @@ export enum ResultType {
   Observable = 'Observable',
   Detect = 'Detect'
 }
+
+export type ErrorHandler = (error: any, ctx: any) => void;

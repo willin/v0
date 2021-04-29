@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { ResultType } from '../types';
 import { cacheable } from '../utils/cacheable';
 import { checkPromise } from '../utils/helpers';
