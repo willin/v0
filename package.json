@@ -1,0 +1,34 @@
+{
+  "name": "v0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint --parallel",
+    "check-types": "turbo run check-types",
+    "check": "biome check --write --no-errors-on-unmatched --unsafe .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@cloudflare/workers-types": "^4.20250906.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@willin/biome-config": "^0.0.3",
+    "bun-types": "^1.2.21",
+    "husky": "^8.0.3",
+    "turbo": "^2.5.6",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.2.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "shared/*"
+  ]
+}

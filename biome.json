@@ -1,0 +1,25 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
+  "extends": ["@willin/biome-config"],
+  "files": {
+    "includes": [
+      "**",
+      "!**/worker-configuration.d.ts",
+      "!**/cloudflare-env.d.ts",
+      "!**/app.css"
+    ]
+  },
+  "formatter": {
+    "lineWidth": 80
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noEmptyPattern": "warn"
+      },
+      "a11y": {
+        "noStaticElementInteractions": "off"
+      }
+    }
+  }
+}
